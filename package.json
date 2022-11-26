@@ -7,7 +7,7 @@
     "dev": "next dev",
     "postinstall": "prisma generate",
     "lint": "next lint",
-    "lint:fix": "next lint --fix",
+    "lint:fix": "next lint",
     "start": "next start",
     "prepare": "husky install"
   },
