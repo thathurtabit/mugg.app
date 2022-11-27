@@ -1,14 +1,12 @@
 import { type NextPage } from "next";
 import Head from 'next/head'
 
-import { trpc } from '../utils/trpc'
+// import { trpc } from '../utils/trpc'
 import { AuthProviders } from '../components/organisms/auth-providers/auth-providers'
 import { PageHeader } from '../components/atoms/page-header/page-header'
 import { settings } from '../settings/constants'
 
 const Home: NextPage = () => {
-  const hello = trpc.example.hello.useQuery({ text: 'from tRPC' })
-
   return (
     <>
       <Head>
@@ -21,9 +19,6 @@ const Home: NextPage = () => {
           <PageHeader text={settings.appName} />
           <div className="text-white">Testing</div>
           <div className="flex flex-col items-center gap-2">
-            <p className="text-2xl text-white">
-              {hello.data ? hello.data.greeting : 'Loading tRPC query...'}
-            </p>
             <AuthProviders />
           </div>
         </div>
