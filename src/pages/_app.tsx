@@ -6,7 +6,7 @@ import { trpc } from "../utils/trpc";
 
 import "../styles/globals.css";
 
-const MyApp: AppType<{ session: Session | null }> = ({
+const MuggApp: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },
 }) => {
@@ -14,7 +14,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
     <SessionProvider session={session}>
       <Component {...pageProps} />
     </SessionProvider>
-  );
-};
+  )
+}
 
-export default trpc.withTRPC(MyApp);
+export default trpc.withTRPC(MuggApp)
