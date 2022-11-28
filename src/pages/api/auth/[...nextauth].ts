@@ -4,6 +4,7 @@ import GoogleProvider from 'next-auth/providers/google';
 import GithubProvider from 'next-auth/providers/github';
 import TwitterProvider from 'next-auth/providers/twitter';
 import FacebookProvider from 'next-auth/providers/facebook';
+import InstagramProvider from 'next-auth/providers/instagram';
 // Prisma adapter for NextAuth, optional and can be removed
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 
@@ -38,6 +39,10 @@ export const authOptions: NextAuthOptions = {
       clientId: env.TWITTER_CLIENT_ID,
       clientSecret: env.TWITTER_CLIENT_SECRET,
       version: '2.0',
+    }),
+    InstagramProvider({
+      clientId: env.INSTAGRAM_CLIENT_ID,
+      clientSecret: env.INSTAGRAM_CLIENT_SECRET,
     }),
     GithubProvider({
       clientId: env.GITHUB_CLIENT_ID,

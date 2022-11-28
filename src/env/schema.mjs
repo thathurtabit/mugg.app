@@ -28,6 +28,8 @@ export const serverSchema = z.object({
   TWITTER_CLIENT_SECRET: z.string(),
   FACEBOOK_CLIENT_ID: z.string(),
   FACEBOOK_CLIENT_SECRET: z.string(),
+  INSTAGRAM_CLIENT_ID: z.string(),
+  INSTAGRAM_CLIENT_SECRET: z.string(),
   GITHUB_CLIENT_ID: z.string(),
   GITHUB_CLIENT_SECRET: z.string(),
 });
