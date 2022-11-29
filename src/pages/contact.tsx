@@ -7,18 +7,18 @@ import { PageMain } from '../components/molecules/page-main/page-main';
 import { PageWrapper } from '../components/molecules/page-wrapper/page-wrapper';
 import { settings } from '../settings/constants';
 
-const Privacy: NextPage = () => {
+const Contact: NextPage = () => {
   return (
     <PageWrapper>
       <Head>
-        <title>Privacy | {settings.appName}</title>
+        <title>Contact | {settings.appName}</title>
         <meta name="description" content={settings.appDescription} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PageMain>
         <PageContent>
-          <PageHeader text="Privacy" />
-          <p className="text-white">Privacy!</p>
+          <PageHeader text="Contact" />
+          <p className="text-white">Contact page!</p>
         </PageContent>
       </PageMain>
       <Footer />
@@ -26,4 +26,4 @@ const Privacy: NextPage = () => {
   );
 };
 
-export default Privacy;
+export default Contact;
