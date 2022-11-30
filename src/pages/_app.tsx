@@ -1,10 +1,13 @@
 import { type AppType } from "next/app";
 import { type Session } from "next-auth";
-import { SessionProvider } from "next-auth/react";
+import { Raleway } from '@next/font/google';
+import { SessionProvider } from 'next-auth/react';
 
-import { trpc } from "../utils/trpc";
+import { trpc } from '../utils/trpc';
 
-import "../styles/globals.css";
+import '../styles/globals.css';
+
+const raleway = Raleway({ subsets: ['latin'], variable: '--font-raleway' });
 
 const MuggApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -12,9 +15,11 @@ const MuggApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      <div className={`${raleway.variable} font-sans`}>
+        <Component {...pageProps} className={raleway.className} />
+      </div>
     </SessionProvider>
-  )
+  );
 }
 
 export default trpc.withTRPC(MuggApp)

@@ -11,6 +11,7 @@ import { Footer } from '../../components/molecules/footer/footer';
 import { PageWrapper } from '../../components/molecules/page-wrapper/page-wrapper';
 import { PageMain } from '../../components/molecules/page-main/page-main';
 import { PageContent } from '../../components/molecules/page-content/page-content';
+import { Header } from '../../components/organisms/header/header';
 
 export const SignIn = ({ providers }: NextAuthOptions) => {
   const { query } = useRouter();
@@ -31,6 +32,7 @@ export const SignIn = ({ providers }: NextAuthOptions) => {
         <meta name="description" content={settings.appDescription} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
       <PageMain>
         <PageContent>
           <PageHeader text={`Sign in to ${settings.appName}`} />
@@ -40,7 +42,7 @@ export const SignIn = ({ providers }: NextAuthOptions) => {
               {providersList.map(({ name, id }) => (
                 <li className="m-2" key={name}>
                   <button
-                    className="block w-full rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
+                    className="block w-full rounded-full bg-white/10 px-10 py-2 font-semibold text-white no-underline transition hover:bg-white/20"
                     onClick={() => signIn(id, { callbackUrl: settings.appURL })}
                   >
                     Sign in with {name}

@@ -13,11 +13,15 @@ export const Footer: FC = () => {
   ];
 
   return (
-    <footer>
-      <ul className="flex flex-row items-center justify-center gap-4">
+    <footer className="flex w-full">
+      <ul className="ml-auto mr-4 flex flex-row items-center justify-center gap-4 p-3">
         {footerLinks.map(({ text, href, title }) => (
           <li key={href}>
-            <NextLink className="text-white" href={href} title={title}>
+            <NextLink
+              className="space-x-4 text-xs uppercase tracking-wider text-gray-400 hover:text-gray-300"
+              href={href}
+              title={title}
+            >
               {text}
             </NextLink>
           </li>
