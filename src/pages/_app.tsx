@@ -6,6 +6,7 @@ import { SessionProvider } from 'next-auth/react';
 import { trpc } from '../utils/trpc';
 
 import '../styles/globals.css';
+import { MuggAppProvider } from '../context/context/context';
 
 const raleway = Raleway({ subsets: ['latin'], variable: '--font-raleway' });
 
@@ -15,9 +16,11 @@ const MuggApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <SessionProvider session={session}>
-      <div className={`${raleway.variable} font-sans`}>
-        <Component {...pageProps} className={raleway.className} />
-      </div>
+      <MuggAppProvider>
+        <div className={`${raleway.variable} font-sans`}>
+          <Component {...pageProps} className={raleway.className} />
+        </div>
+      </MuggAppProvider>
     </SessionProvider>
   );
 }
