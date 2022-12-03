@@ -10,8 +10,8 @@ export const SignIn: React.FC = () => {
   );
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4">
-      <p className="text-center text-2xl text-white">
+    <div className="flex flex-col items-center justify-center gap-4 text-sm">
+      <p className="text-center text-white">
         {sessionData && <span>Logged in as {sessionData.user?.name}</span>}
         {secretMessage && <span> - {secretMessage}</span>}
       </p>

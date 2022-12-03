@@ -18,7 +18,7 @@ export const Footer: FC = () => {
         {footerLinks.map(({ text, href, title }) => (
           <li key={href}>
             <NextLink
-              className="space-x-4 text-xs uppercase tracking-wider text-gray-400 hover:text-gray-300"
+              className="space-x-4 text-xs uppercase tracking-wider text-gray-400 outline-offset-4 hover:text-gray-300 focus:border-action focus:outline-none focus:ring-1 focus:ring-action focus:ring-offset-4 focus:ring-offset-background"
               href={href}
               title={title}
             >

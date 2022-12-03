@@ -25,7 +25,7 @@ const Home: NextPage = () => {
       <PageMain>
         <PageContent>
           <PageHeader text={settings.appName} />
-          <div className="text-white">{helloData.greeting}</div>
+          <div className="border-link bg-bg">{helloData.greeting}</div>
           <div className="flex flex-col items-center gap-2">
             <p className="text-white">Hello wurld!</p>
           </div>
