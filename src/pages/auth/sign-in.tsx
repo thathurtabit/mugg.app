@@ -32,7 +32,6 @@ export const SignIn = ({ providers }: NextAuthOptions) => {
         <meta name="description" content={settings.appDescription} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
       <PageMain>
         <PageContent>
           <PageHeader text={`Sign in to ${settings.appName}`} />
@@ -53,7 +52,6 @@ export const SignIn = ({ providers }: NextAuthOptions) => {
           )}
         </PageContent>
       </PageMain>
-      <Footer />
     </PageWrapper>
   );
 };

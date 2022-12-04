@@ -4,24 +4,21 @@ import Head from 'next/head'
 import { trpc } from '../utils/trpc';
 import { PageHeader } from '../components/atoms/page-header/page-header';
 import { settings } from '../settings/constants';
-import { Footer } from '../components/molecules/footer/footer';
-import { PageWrapper } from '../components/molecules/page-wrapper/page-wrapper';
 import { PageMain } from '../components/molecules/page-main/page-main';
 import { PageContent } from '../components/molecules/page-content/page-content';
-import { Header } from '../components/organisms/header/header';
+import { Fragment } from 'react';
 
 const Home: NextPage = () => {
   const { data: helloData = { greeting: 'Loading...' } } =
     trpc.public.hello.useQuery({ text: 'from tRPC' });
 
   return (
-    <PageWrapper>
+    <Fragment>
       <Head>
         <title>{settings.appName}</title>
         <meta name="description" content={settings.appDescription} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
       <PageMain>
         <PageContent>
           <PageHeader text={settings.appName} />
@@ -31,8 +28,7 @@ const Home: NextPage = () => {
           </div>
         </PageContent>
       </PageMain>
-      <Footer />
-    </PageWrapper>
+    </Fragment>
   );
 };
 

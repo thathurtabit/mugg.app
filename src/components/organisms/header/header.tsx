@@ -14,10 +14,10 @@ export const Header: FC = () => {
 
   const interactiveMenuStyles =
     (isMenuOpen && !showMenu) || (!isMenuOpen && showMenu)
-      ? 'w-0 opacity-0'
+      ? '-right-96 opacity-0'
       : isMenuOpen && showMenu
-      ? 'w-min w-96 p-5 opacity-100'
-      : 'hidden';
+      ? 'w-min right-0 p-5 opacity-100'
+      : 'hidden -right-96 opacity-0';
 
   return (
     <header className="flex w-full">
@@ -35,7 +35,7 @@ export const Header: FC = () => {
         Menu
       </button>
       <section
-        className={`fixed right-0 top-0 bottom-0 box-border justify-end overflow-hidden bg-backgroundLight py-5 text-sm shadow-sm transition-all duration-500 ${interactiveMenuStyles}`}
+        className={`fixed right-0 top-0 bottom-0 box-border w-96 justify-end overflow-hidden bg-backgroundLight py-5 text-sm shadow-sm transition-all duration-500 ${interactiveMenuStyles}`}
       >
         <SignIn />
       </section>
